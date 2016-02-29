@@ -1,6 +1,6 @@
 from django.contrib import admin
-from shop.models import Product
-from django.core.urlresolvers import reverse
+from apps.shop.models import Product
+
 
 class AdminProduct(admin.ModelAdmin):
     list_display = ('name',)
