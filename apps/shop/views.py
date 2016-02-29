@@ -17,3 +17,15 @@ def product_list(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         products = paginator.page(paginator.num_pages)
     return render(request, 'shop/product_list.html', {'products': products})
+
+
+# def product_page(request, id  ):
+#     print id
+
+
+def product_page(request, product_slug):
+    product = Product.objects.get(slug=product_slug)
+    return render(request, 'shop/product.html', {'product': product})
+    # print id
+    # from django.http import HttpResponse
+    # return HttpResponse(1)
