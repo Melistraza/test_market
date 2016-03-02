@@ -3,10 +3,12 @@
 {% block extra_head %}
 {% endblock %}
 {% block content %}
+    <!-- Product block -->
     <h4 class="text-center"><a href="#">{{ product.name }}</a> € {{ product.price }}</h4>
     <div class="well">{{ product.description|striptags|linebreaksbr }}</div>
     <hr>
 
+    <!-- Success massage after comment product -->
     {% if messages %}
         <div class="alert alert-success" role="alert">
             {% for message in messages %}
@@ -15,9 +17,8 @@
         </div>
     {% endif %}
 
+    <!-- Comment form -->
     <form method="post">{% csrf_token %}
-        <input type="hidden" id="id_product" name="product" value="{{ product.slug }}">
-        <input type="hidden" id="id_user" name="user" value="{% if user.is_authenticated %}{{ user.email }}{% else %}None{% endif %}">
         {{ form.errors.text }}
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Comment..." id="id_text" name="text">
@@ -28,6 +29,7 @@
     </form>
     <br>
 
+    <!-- Like button -->
     <button class="btn btn-primary" type="button">
        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like <span class="badge">4</span>
     </button>
@@ -36,7 +38,7 @@
        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Unlike <span class="badge">4</span>
     </button>
 
-
+    <!-- Comment list -->
     <br><br>
     {% for comment in comments %}
         <div class="well">

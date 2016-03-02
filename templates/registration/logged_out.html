@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block extra_head %}
+{% endblock %}
+{% block content %}
+<div class="logout_page">
+<h1>Logged out</h1>
+<p>Thanks for spending some quality time with the Web site today.</p>
+<p><a href="{% url 'login' %}">Log in again</a></p>
+<p><a href="{% url 'product_list' %}">Main page</a></p>
+</div>
+{% endblock %}

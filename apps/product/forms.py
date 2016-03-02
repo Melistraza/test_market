@@ -1,5 +1,5 @@
 from django import forms
-from product.models import Comment
+from apps.product.models import Comment
 
 
 class CommentsForm(forms.ModelForm):

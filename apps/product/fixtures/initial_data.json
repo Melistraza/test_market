@@ -1,0 +1,308 @@
+[
+{
+    "fields": {
+        "description": "The short sleeve Maratty Shirt is a bold statement piece for Spring Summer. The 'Palm Tree' design is reverse printed on a lightweight cotton chambray, creating a subtle, vintage appearance. Featuring a fresh colour palette of blue and green tones, this is a contemporary take on the classic Hawaiian shirt.\r\n\r\n\u2014 Short sleeve shirt\r\n\u2014 Reverse printed cotton chambray\r\n\u2014 Button down collar\r\n\u2014 Branded buttons\r\n\u2014 Chest pocket detail\r\n\u2014 Tonal top stitching",
+        "price": 81,
+        "modified_at": "2016-03-02T15:14:01Z",
+        "slug": "short-sleeve-blue-maratty-shirt",
+        "created_at": "2016-03-02T15:14:01Z",
+        "name": "SHORT SLEEVE BLUE MARATTY SHIRT"
+    },
+    "model": "product.product",
+    "pk": 1
+},
+{
+    "fields": {
+        "description": "This season we've handpicked our favourite Liberty Arts Fabric and worked this into the Spring Summer collection. Inspired by paisley motifs, this is a refreshing addition to your wardrobe. The 'Paisley Tears' print is part of the Tana Lawn collection at Liberty and features an all over dense paisley floral pattern in a bold palette.\r\n\r\n\u2014 Liberty Arts Fabric\r\n\u2014 Lightweight cotton\r\n\u2014 All over paisley design\r\n\u2014 Button down collar\r\n\u2014 Chest pocket detail\r\n\u2014 Complete with branded buttons",
+        "price": 115,
+        "modified_at": "2016-03-02T15:14:24Z",
+        "slug": "short-sleeve-ecru-leaside-shirt",
+        "created_at": "2016-03-02T15:14:24Z",
+        "name": "SHORT SLEEVE ECRU LEASIDE SHIRT"
+    },
+    "model": "product.product",
+    "pk": 2
+},
+{
+    "fields": {
+        "description": "\u2014 Crafted from a printed cotton pique\r\n\u2014 All over ditsy paisley design\r\n\u2014 2 button chest placket\r\n\u2014 Ribbed collar and cuffs\r\n\u2014 Signature branded buttons \r\n\u2014 Finished with a branded chest badge\r\n\u2014 Cut in a slim fit",
+        "price": 74,
+        "modified_at": "2016-03-02T15:14:46Z",
+        "slug": "short-sleeve-navy-byland-polo",
+        "created_at": "2016-03-02T15:14:46Z",
+        "name": "NAVY BYLAND POLO"
+    },
+    "model": "product.product",
+    "pk": 3
+},
+{
+    "fields": {
+        "description": "\u2014 Crafted from a printed cotton pique\r\n\u2014 All over ditsy paisley design\r\n\u2014 2 button chest placket\r\n\u2014 Ribbed collar and cuffs\r\n\u2014 Signature branded buttons \r\n\u2014 Finished with a branded chest badge\r\n\u2014 Cut in a slim fit",
+        "price": 74,
+        "modified_at": "2016-03-02T15:15:09Z",
+        "slug": "short-sleeve-white-byland-polo",
+        "created_at": "2016-03-02T15:15:09Z",
+        "name": "WHITE BYLAND POLO"
+    },
+    "model": "product.product",
+    "pk": 4
+},
+{
+    "fields": {
+        "description": "This season we've hand picked our favourite Liberty Arts Fabric and worked this into the Spring Summer collection. Inspired by paisley motifs, this is a refreshing addition to your wardrobe. The 'Paisley Tears' print is part of the Tana Lawn collection at Liberty and features an all over dense paisley floral pattern in a bold palette.\r\n\r\n\u2014 Short sleeve cotton jersey polo\r\n\u2014 Liberty Arts Fabric on collar and internal placket\r\n\u2014 3 button chest placket\r\n\u2014 Signature branded buttons\r\n\u2014 Embroidered chest badge\r\n\u2014 Cut in a slim fit",
+        "price": 81,
+        "modified_at": "2016-03-02T15:15:36Z",
+        "slug": "short-sleeve-white-tynesbank-polo",
+        "created_at": "2016-03-02T15:15:36Z",
+        "name": "WHITE TYNESBANK POLO"
+    },
+    "model": "product.product",
+    "pk": 5
+},
+{
+    "fields": {
+        "description": "This season we've hand picked our favourite Liberty Arts Fabric and worked this into the Spring Summer collection. Inspired by paisley motifs, this is a refreshing addition to your wardrobe. The 'Paisley Tears' print is part of the Tana Lawn collection at Liberty and features an all over dense paisley floral pattern in a bold palette.\r\n\r\n\u2014 Short sleeve cotton jersey polo\r\n\u2014 Liberty Arts Fabric on collar and internal placket\r\n\u2014 3 button chest placket\r\n\u2014 Signature branded buttons\r\n\u2014 Embroidered chest badge\r\n\u2014 Cut in a slim fit",
+        "price": 81,
+        "modified_at": "2016-03-02T15:16:09Z",
+        "slug": "short-sleeve-blue-tynesbank-polo",
+        "created_at": "2016-03-02T15:16:09Z",
+        "name": "BLUE TYNESBANK POLO"
+    },
+    "model": "product.product",
+    "pk": 6
+},
+{
+    "fields": {
+        "description": "Introducing the new Gresham Weave Boot for SS16. Handmade and neatly crafted from a super soft textured mossback suede and natural crepe sole. The classic lace-up design works a stitch down construction, full leather cushioned interior and complete with a branded embossed leather floret.\r\n\r\n\u2014 Suede sourced in Europe\r\n\u2014 Mossback suede upper\r\n\u2014 Natural crepe sole\r\n\u2014 Lace-up design\r\n\u2014 Hand crafted\r\n\u2014 Stitchdown construction\r\n\u2014 Leather cushioned interior\r\nHandmade in Northern Portugal using traditional Portuguese shoe making techniques that haven\u2019t changed for generations.",
+        "price": 128,
+        "modified_at": "2016-03-02T15:16:36Z",
+        "slug": "tan-gresham-weave-boot",
+        "created_at": "2016-03-02T15:16:36Z",
+        "name": "TAN GRESHAM WEAVE BOOTS"
+    },
+    "model": "product.product",
+    "pk": 7
+},
+{
+    "fields": {
+        "description": "The Alton Sunglasses are a a 70\u2019s inspired flat-top design, immaculately constructed from acetate. Featuring shiny double pins on the temples and metal branding intricately inlaid on the arm. These over sized bold frames are stylish, modern and designed to transform your everyday attire.\r\n\r\n\u2014 Hand crafted \r\n\u2014 Signature branded\r\n\u2014 Black acetate frames and arms\r\n\u2014 Offers maximum UV protection\r\n\u2014 Filter category 3\r\nDimensions:\r\nLens width: 5 cm\r\nArm length: 14 cm\r\n\r\nFrame \u2014 100% Acetate\r\nLens \u2014 CR39",
+        "price": 122,
+        "modified_at": "2016-03-02T15:16:55Z",
+        "slug": "black-alton-sunglasses",
+        "created_at": "2016-03-02T15:16:55Z",
+        "name": "BLACK ALTON SUNGLASES"
+    },
+    "model": "product.product",
+    "pk": 8
+},
+{
+    "fields": {
+        "description": "The Alton Sunglasses are a a 70\u2019s inspired flat-top design, immaculately constructed from acetate. Featuring shiny double pins on the temples and metal branding intricately inlaid on the arm. These over sized bold frames are stylish, modern and designed to transform your everyday attire.\r\n\r\n\u2014 Hand crafted \r\n\u2014 Signature branded\r\n\u2014 Tortoiseshell acetate frames and arms\r\n\u2014 Offers maximum UV protection\r\n\u2014 Filter category 3\r\nDimensions:\r\nLens width: 5 cm\r\nArm length: 14 cm\r\n\r\nFrame \u2014 100% Acetate\r\nLens \u2014 CR39",
+        "price": 122,
+        "modified_at": "2016-03-02T15:17:16Z",
+        "slug": "tortoise-alton-sunglasses",
+        "created_at": "2016-03-02T15:17:16Z",
+        "name": "TORTOISESHELL ALTON SUNGLASSES"
+    },
+    "model": "product.product",
+    "pk": 9
+},
+{
+    "fields": {
+        "description": "Introducing the new Ridley Desert Shoe for SS16. Handmade and neatly crafted from a super soft textured mossback suede and natural crepe sole. The classic lace-up design works a stitch down construction, full leather cushioned interior and complete with a branded embossed leather floret.\r\n\r\n\u2014 Suede sourced in Europe\r\n\u2014 Mossback suede upper\r\n\u2014 Natural crepe sole\r\n\u2014 Lace-up design\r\n\u2014 Hand crafted\r\n\u2014 Stitchdown construction\r\n\u2014 Leather cushioned interior\r\nHandmade in Northern Portugal using traditional Portuguese shoe making techniques that haven\u2019t changed for generations.",
+        "price": 101,
+        "modified_at": "2016-03-02T15:17:41Z",
+        "slug": "bone-ridley-suede-desert-shoe",
+        "created_at": "2016-03-02T15:17:41Z",
+        "name": "BONE RIDLEY SUEDE DESERT SHOE"
+    },
+    "model": "product.product",
+    "pk": 10
+},
+{
+    "fields": {
+        "description": "The iconic Mayfair Trench Coat is a classic, timeless all year round staple piece inspired by heritage and military elements. Come rain or shine, the iconic trench can be worn all year round, combining functionality and style. Transcend your summer attire this season.\r\n\r\n\u2014 Crafted from a cotton blend\r\n\u2014 Lightweight construction\r\n\u2014 Streamlined silhouette\r\n\u2014 Concealed front button fastening\r\n\u2014 Pronounced collar\r\n\u2014 Signature branded corozo buttons\r\n\u2014 Front storm flap detail\r\n\u2014 Adjustable button cuffs\r\n\u2014 Back storm flap\r\n\u2014 Single vent",
+        "price": 169,
+        "modified_at": "2016-03-02T15:18:06Z",
+        "slug": "navy-mayfair-trench",
+        "created_at": "2016-03-02T15:18:06Z",
+        "name": "NAVY MAYFAIR TRENCH"
+    },
+    "model": "product.product",
+    "pk": 11
+},
+{
+    "fields": {
+        "description": "\u2014 Crafted from pure modal\r\n\u2014 Paisley square scarf\r\n\u2014 Finished with a branded label\r\n\u2014 Made in Italy\r\nLength \u2014 65 cm\r\nWidth \u2014 65 cm\r\nComposition \u2014 100% Modal",
+        "price": 88,
+        "modified_at": "2016-03-02T15:18:27Z",
+        "slug": "black-cambridge-paisley-scarf",
+        "created_at": "2016-03-02T15:18:27Z",
+        "name": "BLACK CAMBRIDGE PAISLEY SCARF"
+    },
+    "model": "product.product",
+    "pk": 12
+},
+{
+    "fields": {
+        "description": "\u2014 Crafted from a printed cotton\r\n\u2014 All over dense floral pattern in a bold palette\r\n\u2014 Fringing at both ends\r\n\u2014 Finished with a branded label\r\nLength \u2014 200 cm\r\nWidth \u2014 45 cm\r\nComposition \u2014 100% Cotton",
+        "price": 61,
+        "modified_at": "2016-03-02T15:18:48Z",
+        "slug": "red-jimi-print-scarf",
+        "created_at": "2016-03-02T15:18:48Z",
+        "name": "RED JIMI PRINT SCARF"
+    },
+    "model": "product.product",
+    "pk": 13
+},
+{
+    "fields": {
+        "description": "Crafted from a printed cotton that has been garment dyed and washed for an authentic vintage appearance. Smartly tailored in a slim fit for a crisp, sharp clean look.\r\n\r\n\u2014 Slim fit shorts \r\n\u2014 Printed cotton\r\n\u2014 Garment dyed and washed\r\n\u2014 Classic five pocket construction\r\n\u2014 Concealed button fly closure\r\n\u2014 Signature branded buttons\r\n\u2014 Tonal stitching\r\n\u2014 Belt loop detail",
+        "price": 81,
+        "modified_at": "2016-03-02T15:19:09Z",
+        "slug": "navy-ridley-shorts",
+        "created_at": "2016-03-02T15:19:09Z",
+        "name": "NAVY RIDLEY SHORTS"
+    },
+    "model": "product.product",
+    "pk": 14
+},
+{
+    "fields": {
+        "description": "Crafted from a printed cotton that has been garment dyed and washed for an authentic vintage appearance. Smartly tailored in a slim fit for a crisp, sharp clean look.\r\n\r\n\u2014 Slim fit shorts \r\n\u2014 Printed cotton\r\n\u2014 Garment dyed and washed\r\n\u2014 Classic five pocket construction\r\n\u2014 Concealed button fly closure\r\n\u2014 Signature branded buttons\r\n\u2014 Tonal stitching\r\n\u2014 Belt loop detail",
+        "price": 81,
+        "modified_at": "2016-03-02T15:19:32Z",
+        "slug": "khaki-ridley-shorts",
+        "created_at": "2016-03-02T15:19:32Z",
+        "name": "KHAKI RIDLEY SHORTS"
+    },
+    "model": "product.product",
+    "pk": 15
+},
+{
+    "fields": {
+        "description": "The Mandel Leopard Biker features an all over micro leopard print. Garment over dyed for a subtle appearance. Complete with patch pockets, tonal twin needle stitching throughout and black enamelled jean studs.\r\n\r\n\u2014 Crafted from a cotton blend\r\n\u2014 Garment over dyed\r\n\u2014 All over micro leopard print\r\n\u2014 Lightweight construction\r\n\u2014 Branded black enamelled jean studs\r\n\u2014 Patch pockets\r\n\u2014 Front pleat detail\r\n\u2014 Tonal twin needle stitching\r\n\u2014 Cuff fastening\r\n\u2014 Model is 6'1\" and wears a size medium\r\nComposition \u2014 Shell: 97% Cotton 3% Elastane",
+        "price": 196,
+        "modified_at": "2016-03-02T15:19:56Z",
+        "slug": "dark-grey-mandel-leopard-biker-jacket",
+        "created_at": "2016-03-02T15:19:56Z",
+        "name": "DARK GREY MANDEL LEOPARD BIKER JACKET"
+    },
+    "model": "product.product",
+    "pk": 16
+},
+{
+    "fields": {
+        "description": "\u2014 Crafted from pure modal\r\n\u2014 All over paisley and floral design\r\n\u2014 Fringing at both ends\r\n\u2014 Finished with a branded label\r\nLength \u2014 150 cm\r\nWidth \u2014 11 cm\r\nComposition \u2014 100% Modal",
+        "price": 54,
+        "modified_at": "2016-03-02T15:20:16Z",
+        "slug": "navy-paisley-skinny-scarf",
+        "created_at": "2016-03-02T15:20:16Z",
+        "name": "NAVY PAISLEY SKINNY SCARF"
+    },
+    "model": "product.product",
+    "pk": 17
+},
+{
+    "fields": {
+        "description": "\u2014 Crafted from pure modal\r\n\u2014 All over tonal paisley design\r\n\u2014 Fringing at both ends\r\n\u2014 Finished with a branded label\r\nLength \u2014 154 cm\r\nWidth \u2014 23 cm\r\nComposition \u2014 100% Modal",
+        "price": 47,
+        "modified_at": "2016-03-02T15:20:39Z",
+        "slug": "red-tonal-paisley-scarf",
+        "created_at": "2016-03-02T15:20:39Z",
+        "name": "RED TONAL PAISLEY SCARF"
+    },
+    "model": "product.product",
+    "pk": 18
+},
+{
+    "fields": {
+        "description": "This season we've handpicked our favourite Liberty Arts Fabric and worked this into the Spring Summer collection. Inspired by paisley motifs, this is a refreshing addition to your wardrobe. The 'Paisley Tears' print is part of the Tana Lawn collection at Liberty and features an all over dense paisley floral pattern in a bold palette.\r\n\r\nOur classic logo has been reworked in a Liberty Arts Fabric. Crafted from a soft, lightweight comfortable cotton.\r\n\r\n\u2014 Crew neck cotton t-shirt\r\n\u2014 Short sleeve\r\n\u2014 Classic logo reworked in a Liberty Arts Fabric\r\n\u2014 Slim fit design",
+        "price": 68,
+        "modified_at": "2016-03-02T15:25:22Z",
+        "slug": "short-sleeve-paisley-tears-tee",
+        "created_at": "2016-03-02T15:25:22Z",
+        "name": " TEAL PAISLEY TEARS TEE"
+    },
+    "model": "product.product",
+    "pk": 19
+},
+{
+    "fields": {
+        "description": "\u2014 Crew neck cotton t-shirt\r\n\u2014 Short sleeve\r\n\u2014 Graphic designed and developed in house\r\n\u2014 Slim fit design\r\nComposition \u2014 100% Cotton",
+        "price": 54,
+        "modified_at": "2016-03-02T15:25:40Z",
+        "slug": "short-sleeve-grey-marl-festival-tee",
+        "created_at": "2016-03-02T15:25:40Z",
+        "name": "LIGHT GREY MARL FESTIVAL TEE"
+    },
+    "model": "product.product",
+    "pk": 20
+},
+{
+    "fields": {
+        "description": "\u2014 Crew neck cotton t-shirt\r\n\u2014 Short sleeve\r\n\u2014 Graphic designed and developed in house\r\n\u2014 Slim fit design\r\nComposition \u2014 100% Cotton",
+        "price": 54,
+        "modified_at": "2016-03-02T15:25:56Z",
+        "slug": "short-sleeve-navy-festival-tee",
+        "created_at": "2016-03-02T15:25:56Z",
+        "name": "NAVY FESTIVAL TEE"
+    },
+    "model": "product.product",
+    "pk": 21
+},
+{
+    "fields": {
+        "description": "This season we've handpicked our favourite Liberty Arts Fabric and worked this into the Spring Summer collection. Inspired by paisley motifs, this is a refreshing addition to your wardrobe. The 'Paisley Tears' print is part of the Tana Lawn collection at Liberty and features an all over dense paisley floral pattern in a bold palette.\r\n\r\nOur classic logo has been reworked in a Liberty Arts Fabric. Crafted from a soft, lightweight comfortable cotton.\r\n\r\n\u2014 Crew neck cotton t-shirt\r\n\u2014 Short sleeve\r\n\u2014 Classic logo reworked in a Liberty Arts Fabric\r\n\u2014 Slim fit design",
+        "price": 68,
+        "modified_at": "2016-03-02T15:26:18Z",
+        "slug": "short-sleeve-grey-marl-paisley-tears-tee",
+        "created_at": "2016-03-02T15:26:18Z",
+        "name": "LIGHT GREY MARL PAISLEY TEARS TEE"
+    },
+    "model": "product.product",
+    "pk": 22
+},
+{
+    "fields": {
+        "description": "\r\nA functional piece of outerwear for the season and a modern twist on the classic lightweight summer jacket, working multiple functions and designed with style and versatility in mind. Features an adjustable length utility function, ideal for customizing your look and designed to be worn mid length or short depending on your needs. Also features internal elasticated straps designed for wearing round your shoulders, making holding your jacket no longer a hassle.\r\n\r\n\u2014 Lightweight construction\r\n\u2014 Classic, relaxed fit\r\n\u2014 Concealed front zip fastening\r\n\u2014 Additional button fastening\r\n\u2014 Hood with cotton drawstring cords\r\n\u2014 Tonal stitching\r\n\u2014 Signature branded corozo buttons\r\n\u2014 Adjustable button cuffs\r\n\u2014 Adjustable length utility function\r\n\u2014 Elasticated internal straps",
+        "price": 169,
+        "modified_at": "2016-03-02T15:26:43Z",
+        "slug": "red-claydon-jacket",
+        "created_at": "2016-03-02T15:26:43Z",
+        "name": "RED CLAYDON JACKET"
+    },
+    "model": "product.product",
+    "pk": 23
+},
+{
+    "fields": {
+        "description": "The Printed Tarbet Hooded Jacket is a classic staple for the season, crafted in a lightweight printed cotton. The large front pockets and drawstring adjustments combine function with comfort, making this a hardworking garment. Cut in a relaxed loose hippy style and adorned in a vintage 60's paisley print.\r\n\r\n\u2014 Indigo dyed and lazer printed cotton\r\n\u2014 Washed and garment dyed for a vintage appearance\r\n\u2014 Full front zip fastening\r\n\u2014 Concealed front placket\r\n\u2014 Hood with functional drawstring cords\r\n\u2014 Four large pockets with push stud fastening\r\n\u2014 Tonal stitch detail\r\n\u2014 Contrast zig zag stitch detail on sleeve\r\n\u2014 Elasticated cuffs\r\n\u2014 Internal pocket",
+        "price": 243,
+        "modified_at": "2016-03-02T15:27:03Z",
+        "slug": "blue-printed-tarbet-hooded-jacket",
+        "created_at": "2016-03-02T15:27:03Z",
+        "name": "BLUE PRINTED TARBET HOODED JACKET"
+    },
+    "model": "product.product",
+    "pk": 24
+},
+{
+    "fields": {
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2016-03-02T15:29:23Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$ZWwjBdQuDfDq$PITrKDsvOxfPIV/4/YVSrVQpQAu9QkjT+BBJ8WeUfjc=",
+        "email": "admin@admin.admin",
+        "date_joined": "2016-03-02T15:02:36Z"
+    },
+    "model": "auth.user",
+    "pk": 1
+}
+]

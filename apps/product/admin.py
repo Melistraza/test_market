@@ -1,5 +1,5 @@
 from django.contrib import admin
-from product.models import Product, Comment
+from apps.product.models import Product, Comment
 from django.core.urlresolvers import reverse
 
 

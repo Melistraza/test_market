@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Product list{% endblock %}
+{% block extra_head %}
+{% endblock %}
+{% block content %}
+    {% for product in products %}
+        <h4><a href="{% url 'product_page' product.slug %}">{{ product.name }}</a> € {{ product.price }}</h4>
+        <div class="well">{{ product.description|striptags|linebreaksbr }}</div>
+        <hr>
+    {% empty %}
+        <center>No products in DB!</center>
+    {% endfor %}
+    {% if products %}
+        <nav>
+            <ul class="pager">
+                {% if products.has_previous %}
+                <li><a href="?page={{ products.previous_page_number }}">Previous</a></li>
+                {% endif %}
+                <li>Page {{ products.number }} of {{ products.paginator.num_pages }}.</li>
+                {% if products.has_next %}
+                <li><a href="?page={{ products.next_page_number }}">Next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+{% endblock %}

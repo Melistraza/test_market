@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'product',
+    'apps.product',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -66,7 +66,8 @@ DATABASES = {
         'PORT': '3360',
     }
 }
-
+# DROP DATABASE test_db;
+# CREATE DATABASE test_db CHARACTER SET utf8;
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
