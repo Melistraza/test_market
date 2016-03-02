@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^', include('apps.shop.urls')),
+    url(r'^', include('product.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 urlpatterns += staticfiles_urlpatterns()

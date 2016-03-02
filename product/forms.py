@@ -1,8 +1,5 @@
 from django import forms
-from apps.shop.models import Comment
-from django.contrib.auth.models import User
-from apps.shop.models import Product
-from django.core.exceptions import ObjectDoesNotExist
+from product.models import Comment
 
 
 class CommentsForm(forms.ModelForm):

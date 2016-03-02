@@ -6,6 +6,15 @@
     <h4 class="text-center"><a href="#">{{ product.name }}</a> € {{ product.price }}</h4>
     <div class="well">{{ product.description|striptags|linebreaksbr }}</div>
     <hr>
+
+    {% if messages %}
+        <div class="alert alert-success" role="alert">
+            {% for message in messages %}
+                <a href="#" class="alert-link">{{ message }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <form method="post">{% csrf_token %}
         <input type="hidden" id="id_product" name="product" value="{{ product.slug }}">
         <input type="hidden" id="id_user" name="user" value="{% if user.is_authenticated %}{{ user.email }}{% else %}None{% endif %}">
@@ -18,6 +27,17 @@
         </div>
     </form>
     <br>
+
+    <button class="btn btn-primary" type="button">
+       <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like <span class="badge">4</span>
+    </button>
+
+    <button class="btn btn-primary" type="button">
+       <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Unlike <span class="badge">4</span>
+    </button>
+
+
+    <br><br>
     {% for comment in comments %}
         <div class="well">
             <a name="{{ comment.pk }}"></a>

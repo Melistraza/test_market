@@ -16,3 +16,8 @@ class Comment(models.Model):
     user = models.ForeignKey(User, blank=True)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+class Like(models.Model):
+    user = models.ForeignKey(User)
+    product = models.ForeignKey(Product)

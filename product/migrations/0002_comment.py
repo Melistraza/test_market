@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('text', models.TextField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('product', models.ForeignKey(to='shop.Product')),
+                ('product', models.ForeignKey(to='product.Product')),
                 ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, blank=True)),
             ],
         ),
