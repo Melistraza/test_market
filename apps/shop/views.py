@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.shop.models import Product, Comment
+from apps.shop.models import Product, Comment, Like
 from apps.shop.forms import CommentsForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.models import User
@@ -25,20 +25,15 @@ def product_list(request):
 def product_page(request, product_slug):
     product = Product.objects.get(slug=product_slug)
     comments = Comment.objects.filter(product=product, created_at__gt=last_day).order_by('-created_at')[:10]
+    likes = Like.objects.filter(product=product)
     if request.method == 'POST':
         form = CommentsForm(request.POST)
         if form.is_valid():
-            # validate form in view in this case, much faster
-            try:
-                product = Product.objects.get(slug=product_slug)
-            except ObjectDoesNotExist:
-                product = None
-
+            text = form.cleaned_data['text']
             if request.user.is_authenticated():
-                user = User.objects.get(email=request.user.email)
+                user = request.user
             else:
                 user = None
-            text = form.cleaned_data['text']
             Comment.objects.create(product=product, user=user, text=text)
             messages.success(request, 'Thanks for comment!')
             return redirect(request.META['HTTP_REFERER'])
