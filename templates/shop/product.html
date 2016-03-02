@@ -3,7 +3,28 @@
 {% block extra_head %}
 {% endblock %}
 {% block content %}
-    {{ product.name }}<br>
-    {{ product.description }}<br>
-    {{ product.price }}<br>
+    <h4 class="text-center"><a href="#">{{ product.name }}</a> € {{ product.price }}</h4>
+    <div class="well">{{ product.description|striptags|linebreaksbr }}</div>
+    <hr>
+    <form method="post">{% csrf_token %}
+        <input type="hidden" id="id_product" name="product" value="{{ product.slug }}">
+        <input type="hidden" id="id_user" name="user" value="{% if user.is_authenticated %}{{ user.email }}{% else %}None{% endif %}">
+        {{ form.errors.text }}
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Comment..." id="id_text" name="text">
+            <span class="input-group-btn">
+                <input type="submit" value="Send" id="sendbutton" class="btn btn-default"/>
+            </span>
+        </div>
+    </form>
+    <br>
+    {% for comment in comments %}
+        <div class="well">
+            {{ comment.created_at }}  {% if comment.user != None %}{{ comment.user|capfirst }}{% endif %}
+            <br><br>
+            {{ comment.text|striptags|linebreaksbr }}
+        </div>
+        <hr>
+    {% endfor %}
+
 {% endblock %}

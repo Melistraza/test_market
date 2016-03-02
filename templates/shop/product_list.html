@@ -4,20 +4,20 @@
 {% endblock %}
 {% block content %}
     {% for product in products %}
-        <a href="{% url 'product_page' product.slug %}">{{ product.name }}</a>, {{ product.price }}<br>
+        <h4><a href="{% url 'product_page' product.slug %}">{{ product.name }}</a> € {{ product.price }}</h4>
+        <div class="well">{{ product.description|striptags|linebreaksbr }}</div>
+        <hr>
     {% endfor %}
 
-    <div class="pagination">
-        <span class="step-links">
+        <span class="step-links center-block text-center">
             {% if products.has_previous %}
-                <a href="?page={{ products.previous_page_number }}">previous</a>
+                <a href="?page={{ products.previous_page_number }}" class="btn btn-default" role="button">Previous</a>
             {% endif %}
             <span class="current">
                 Page {{ products.number }} of {{ products.paginator.num_pages }}.
             </span>
             {% if products.has_next %}
-                <a href="?page={{ products.next_page_number }}">next</a>
+                <a href="?page={{ products.next_page_number }}" class="btn btn-default" role="button">Next</a>
             {% endif %}
         </span>
-    </div>
 {% endblock %}

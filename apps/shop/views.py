@@ -1,31 +1,48 @@
-from django.shortcuts import render
-from apps.shop.models import Product
+from django.shortcuts import render, redirect
+from apps.shop.models import Product, Comments
+from apps.shop.forms import CommentsForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
+from datetime import datetime, timedelta
+last_day = datetime.now() - timedelta(days=1)
 
 
 def product_list(request):
     product_list = Product.objects.all()
     paginator = Paginator(product_list, 10)
-
     page = request.GET.get('page')
     try:
         products = paginator.page(page)
     except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
         products = paginator.page(1)
     except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
         products = paginator.page(paginator.num_pages)
     return render(request, 'shop/product_list.html', {'products': products})
 
 
-# def product_page(request, id  ):
-#     print id
-
-
 def product_page(request, product_slug):
     product = Product.objects.get(slug=product_slug)
-    return render(request, 'shop/product.html', {'product': product})
-    # print id
-    # from django.http import HttpResponse
-    # return HttpResponse(1)
+    comments = Comments.objects.filter(product=product, created_at__gt=last_day).order_by('-created_at')[:10]
+    if request.method == 'POST':
+        form = CommentsForm(request.POST)
+        if form.is_valid():
+            # validate form in view in this case, much faster
+            try:
+                product = Product.objects.get(slug=product_slug)
+            except ObjectDoesNotExist:
+                product = None
+
+            if request.user.is_authenticated():
+                user = User.objects.get(email=request.user.email)
+            else:
+                user = None
+            text = form.cleaned_data['text']
+            Comments.objects.create(product=product, user=user, text=text)
+            messages.success(request, 'Thanks for comment!')
+            return redirect(request.META['HTTP_REFERER'])
+    else:
+        form = CommentsForm()
+    return render(request, 'shop/product.html', {'product': product, 'form': form, 'comments': comments})
+

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Product(models.Model):
@@ -7,4 +8,11 @@ class Product(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
-    modified_at = models.DateTimeField()
+    modified_at = models.DateTimeField(auto_now_add=True)
+
+
+class Comments(models.Model):
+    product = models.ForeignKey(Product)
+    user = models.ForeignKey(User, blank=True)
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
