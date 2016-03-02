@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from apps.shop.models import Product, Comments
+from apps.shop.models import Product, Comment
 from apps.shop.forms import CommentsForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.models import User
@@ -24,7 +24,7 @@ def product_list(request):
 
 def product_page(request, product_slug):
     product = Product.objects.get(slug=product_slug)
-    comments = Comments.objects.filter(product=product, created_at__gt=last_day).order_by('-created_at')[:10]
+    comments = Comment.objects.filter(product=product, created_at__gt=last_day).order_by('-created_at')[:10]
     if request.method == 'POST':
         form = CommentsForm(request.POST)
         if form.is_valid():
@@ -39,7 +39,7 @@ def product_page(request, product_slug):
             else:
                 user = None
             text = form.cleaned_data['text']
-            Comments.objects.create(product=product, user=user, text=text)
+            Comment.objects.create(product=product, user=user, text=text)
             messages.success(request, 'Thanks for comment!')
             return redirect(request.META['HTTP_REFERER'])
     else:

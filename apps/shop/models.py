@@ -11,7 +11,7 @@ class Product(models.Model):
     modified_at = models.DateTimeField(auto_now_add=True)
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     product = models.ForeignKey(Product)
     user = models.ForeignKey(User, blank=True)
     text = models.TextField()

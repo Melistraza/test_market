@@ -20,6 +20,7 @@
     <br>
     {% for comment in comments %}
         <div class="well">
+            <a name="{{ comment.pk }}"></a>
             {{ comment.created_at }}  {% if comment.user != None %}{{ comment.user|capfirst }}{% endif %}
             <br><br>
             {{ comment.text|striptags|linebreaksbr }}

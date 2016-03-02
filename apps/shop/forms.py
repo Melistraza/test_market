@@ -1,5 +1,5 @@
 from django import forms
-from apps.shop.models import Comments
+from apps.shop.models import Comment
 from django.contrib.auth.models import User
 from apps.shop.models import Product
 from django.core.exceptions import ObjectDoesNotExist
@@ -7,7 +7,7 @@ from django.core.exceptions import ObjectDoesNotExist
 
 class CommentsForm(forms.ModelForm):
     class Meta:
-        model = Comments
+        model = Comment
         fields = ['text',]
     #
     # def clean_user(self, request):

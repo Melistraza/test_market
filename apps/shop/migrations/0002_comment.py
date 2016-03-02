@@ -2,24 +2,25 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ('shop', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Product',
+            name='Comment',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('name', models.CharField(max_length=250)),
-                ('slug', models.CharField(unique=True, max_length=250)),
-                ('description', models.TextField()),
-                ('price', models.IntegerField()),
+                ('text', models.TextField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('modified_at', models.DateTimeField(auto_now_add=True)),
+                ('product', models.ForeignKey(to='shop.Product')),
+                ('user', models.ForeignKey(to=settings.AUTH_USER_MODEL, blank=True)),
             ],
         ),
     ]

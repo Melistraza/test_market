@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.shop.models import Product, Comments
+from apps.shop.models import Product, Comment
 from django.core.urlresolvers import reverse
 
 
@@ -10,8 +10,11 @@ class AdminProduct(admin.ModelAdmin):
         return 'http://127.0.0.1:8000' + reverse('product_page', kwargs={'product_slug': obj.slug})
 
 
-class AdminComments(admin.ModelAdmin):
+class AdminComment(admin.ModelAdmin):
     list_display = ('text',)
 
-admin.site.register(Comments, AdminComments)
+    def view_on_site(self, obj):
+        return 'http://127.0.0.1:8000' + reverse('product_page', kwargs={'product_slug': obj.product.slug}) + '#' + str(obj.id)
+
+admin.site.register(Comment, AdminComment)
 admin.site.register(Product, AdminProduct)
