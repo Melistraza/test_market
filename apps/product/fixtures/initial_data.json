@@ -298,7 +298,7 @@
         "last_login": "2016-03-02T15:29:23Z",
         "groups": [],
         "user_permissions": [],
-        "password": "pbkdf2_sha256$20000$ZWwjBdQuDfDq$PITrKDsvOxfPIV/4/YVSrVQpQAu9QkjT+BBJ8WeUfjc=",
+        "password": "admin",
         "email": "admin@admin.admin",
         "date_joined": "2016-03-02T15:02:36Z"
     },

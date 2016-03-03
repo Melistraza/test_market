@@ -6,6 +6,16 @@ from apps.product.forms import CommentsForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 
+
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+try:
+    from django.utils import simplejson as json
+except ImportError:
+    import json
+
+
 last_day = datetime.now() - timedelta(days=1)
 
 
@@ -43,10 +53,28 @@ def product_page(request, product_slug):
             else:
                 user = None
             Comment.objects.create(product=product, user=user, text=text)
-            # return success message
+            # return success message & redirect to product page
             messages.success(request, 'Thanks for comment!')
             return redirect(request.META['HTTP_REFERER'])
     else:
         form = CommentsForm()
     return render(request, 'product/product.html',
                   {'product': product, 'form': form, 'comments': comments})
+
+
+def like(request, product_slug):
+    '''
+    Liker for product. One user can like one product once.
+    '''
+    user = request.user
+    product = get_object_or_404(Product, slug=product_slug)
+    if product.likes.filter(id=user.id).exists():
+        # user has already liked this product
+        # remove like/user
+        product.likes.remove(user)
+        messages.success(request, 'You disliked this')
+    else:
+        # add a new like for a product
+        product.likes.add(user)
+        messages.success(request, 'You liked this')
+    return redirect(request.META['HTTP_REFERER'])

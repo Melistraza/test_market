@@ -30,13 +30,10 @@
     <br>
 
     <!-- Like button -->
-    <button class="btn btn-primary" type="button">
-       <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Like <span class="badge">4</span>
-    </button>
-
-    <button class="btn btn-primary" type="button">
-       <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Unlike <span class="badge">4</span>
-    </button>
+    <a href="{% url 'like' product.slug %}" class="btn btn-info" role="button">
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Link Button
+    </a>
+    {{ product.likes.count }}
 
     <!-- Comment list -->
     <br><br>
@@ -49,5 +46,4 @@
         </div>
         <hr>
     {% endfor %}
-
 {% endblock %}
