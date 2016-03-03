@@ -3,6 +3,8 @@
 {% block extra_head %}
 {% endblock %}
 {% block content %}
+    <a href="?sort=like" class="btn btn-info" role="button">Sort by likes</a>
+    <a href="?sort=none" class="btn btn-info" role="button">No Sort</a>
     {% for product in products %}
         <h4><a href="{% url 'product_page' product.slug %}">{{ product.name }}</a> € {{ product.price }}</h4>
         <div class="well">{{ product.description|striptags|linebreaksbr }}</div>

@@ -3,6 +3,7 @@
 {% block extra_head %}
 {% endblock %}
 {% block content %}
+
     <!-- Product block -->
     <h4 class="text-center"><a href="#">{{ product.name }}</a> € {{ product.price }}</h4>
     <div class="well">{{ product.description|striptags|linebreaksbr }}</div>

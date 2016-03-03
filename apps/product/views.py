@@ -15,7 +15,11 @@ def product_list(request):
     '''
     Show list of all product, separate it for page, 10 product in page
     '''
-    product_list = Product.objects.all().order_by('-likes')
+    product_list = Product.objects.all()
+    sort = request.GET.get('sort')
+    if sort == 'like':
+        product_list = Product.objects.all().order_by('-likes')
+
     paginator = Paginator(product_list, 10)
     page = request.GET.get('page')
     try:
