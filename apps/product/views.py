@@ -5,6 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.urlresolvers import reverse
 
 from apps.product.models import Product, Comment
 from apps.product.forms import CommentsForm
@@ -15,10 +16,13 @@ def product_list(request):
     '''
     Show list of all product, separate it for page, 10 product in page
     '''
-    product_list = Product.objects.all()
+
     sort = request.GET.get('sort')
+    # by the end of the job is already lazy
     if sort == 'like':
         product_list = Product.objects.all().order_by('-likes')
+    else:
+        product_list = Product.objects.all()
 
     paginator = Paginator(product_list, 10)
     page = request.GET.get('page')
@@ -35,7 +39,7 @@ def product_page(request, product_slug):
     '''
     Personal page for product.
     '''
-    product = Product.objects.get(slug=product_slug)
+    product = get_object_or_404(Product, slug=product_slug)
     comments = Comment.objects.filter(
         product=product, created_at__gt=last_day).order_by('-created_at')[:10]
     # likes = Like.objects.filter(product=product)
@@ -51,7 +55,9 @@ def product_page(request, product_slug):
             Comment.objects.create(product=product, user=user, text=text)
             # return success message & redirect to product page
             messages.success(request, 'Thanks for comment!')
-            return redirect(request.META['HTTP_REFERER'])
+            return redirect(
+                reverse('product_page', kwargs={'product_slug': product.slug}))
+
     else:
         form = CommentsForm()
     return render(request, 'product/product.html',
@@ -81,4 +87,5 @@ def like(request, product_slug):
         # add a new like for a product
         product.likes.add(user)
         messages.success(request, 'You liked this')
-    return redirect(request.META['HTTP_REFERER'])
+    return redirect(
+                reverse('product_page', kwargs={'product_slug': product.slug}))
