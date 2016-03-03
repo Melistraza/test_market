@@ -1,21 +1,13 @@
 from datetime import datetime, timedelta
 
 from django.shortcuts import render, redirect
-from apps.product.models import Product, Comment
-from apps.product.forms import CommentsForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
-
-
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-try:
-    from django.utils import simplejson as json
-except ImportError:
-    import json
 
-
+from apps.product.models import Product, Comment
+from apps.product.forms import CommentsForm
 last_day = datetime.now() - timedelta(days=1)
 
 
@@ -23,7 +15,7 @@ def product_list(request):
     '''
     Show list of all product, separate it for page, 10 product in page
     '''
-    product_list = Product.objects.all()
+    product_list = Product.objects.all().order_by('-likes')
     paginator = Paginator(product_list, 10)
     page = request.GET.get('page')
     try:
@@ -62,9 +54,17 @@ def product_page(request, product_slug):
                   {'product': product, 'form': form, 'comments': comments})
 
 
+@login_required
 def like(request, product_slug):
     '''
     Liker for product. One user can like one product once.
+
+    likes work without ajax, because the requirement in the task to use messages
+    easy to change just need add if request.is_ajax() after
+    if request.method == 'POST in product_page view and change return
+
+    for manual you can use
+    stackoverflow.com/questions/14007453/my-own-like-button-django-ajax-how
     '''
     user = request.user
     product = get_object_or_404(Product, slug=product_slug)
