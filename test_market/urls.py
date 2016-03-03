@@ -9,8 +9,10 @@ urlpatterns = patterns(
     url(r'^', include('apps.product.urls')),
     url(r'^/$', RedirectView.as_view(pattern_name='product_list')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^accounts/login/$', 'django.contrib.auth.views.login', name='login'),
-    url(r'^accounts/profile/$', RedirectView.as_view(pattern_name='product_list')),
+    url(r'^accounts/login/$',
+        'django.contrib.auth.views.login', name='login'),
+    url(r'^accounts/profile/$',
+        RedirectView.as_view(pattern_name='product_list')),
     url(r'^accounts/logout/$',
         'django.contrib.auth.views.logout', name='logout'),
 )

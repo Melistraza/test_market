@@ -42,7 +42,6 @@ def product_page(request, product_slug):
     product = get_object_or_404(Product, slug=product_slug)
     comments = Comment.objects.filter(
         product=product, created_at__gt=last_day).order_by('-created_at')[:10]
-    # likes = Like.objects.filter(product=product)
     if request.method == 'POST':
         # post form for comment
         form = CommentsForm(request.POST)
@@ -69,8 +68,8 @@ def like(request, product_slug):
     '''
     Liker for product. One user can like one product once.
 
-    likes work without ajax, because the requirement in the task to use messages
-    easy to change just need add if request.is_ajax() after
+    likes work without ajax, because the requirement in the task to use
+    messages easy to change just need add if request.is_ajax() after
     if request.method == 'POST in product_page view and change return
 
     for manual you can use
@@ -87,5 +86,5 @@ def like(request, product_slug):
         # add a new like for a product
         product.likes.add(user)
         messages.success(request, 'You liked this')
-    return redirect(
-                reverse('product_page', kwargs={'product_slug': product.slug}))
+    return redirect(reverse('product_page',
+                            kwargs={'product_slug': product.slug}))
