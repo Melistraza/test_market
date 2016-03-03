@@ -3,6 +3,7 @@ from django.core.urlresolvers import reverse
 from models import Product, Comment
 from django.contrib.auth.models import User
 from django.test.client import Client
+from django.core.cache import cache
 # small app that's why all test in one file
 
 # I did not write a lot of test because it just a test
@@ -93,9 +94,15 @@ class TestProductListPages(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_empty_db(self):
+        '''
+        Test emty db and cache page
+        '''
         Product.objects.all().delete()
         response = self.client.get(reverse('product_list'))
-        self.assertTrue('No products in DB' in response.content)
+        self.assertContains(response, 'No products in DB', 0)
+        cache.clear()
+        response = self.client.get(reverse('product_list'))
+        self.assertContains(response, 'No products in DB', 1)
 
     def test_count_products(self):
         '''
