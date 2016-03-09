@@ -95,7 +95,7 @@ class TestProductListPages(TestCase):
 
     def test_empty_db(self):
         '''
-        Test emty db and cache page
+        Test empty db and cache page
         '''
         Product.objects.all().delete()
         response = self.client.get(reverse('product_list'))

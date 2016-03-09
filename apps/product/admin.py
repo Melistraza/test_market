@@ -10,18 +10,9 @@ domain = settings.DOMAIN
 class AdminProduct(admin.ModelAdmin):
     list_display = ('name',)
 
-    def view_on_site(self, obj):
-        return domain + reverse(
-            'product_page', kwargs={'product_slug': obj.slug})
-
 
 class AdminComment(admin.ModelAdmin):
     list_display = ('text',)
-
-    def view_on_site(self, obj):
-        return domain + reverse(
-            'product_page', kwargs={'product_slug': obj.product.slug}
-        ) + '#' + str(obj.id)
 
 admin.site.register(Comment, AdminComment)
 admin.site.register(Product, AdminProduct)

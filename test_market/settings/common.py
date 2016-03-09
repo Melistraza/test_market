@@ -80,7 +80,13 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Kiev'
+# with the old settings, everything was ok, but there was a warning
+# during testing
+# >>> import datetime
+# >>> now = datetime.datetime.now()
+# >>> print now
+# 2016-03-07 19:27:55.245715
 
 USE_I18N = True
 
