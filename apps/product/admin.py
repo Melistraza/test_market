@@ -1,6 +1,5 @@
 from django.contrib import admin
 from apps.product.models import Product, Comment
-from django.core.urlresolvers import reverse
 from django.conf import settings
 domain = settings.DOMAIN
 # domain hardoce because all project must be set up on server
