@@ -11,7 +11,7 @@ urlpatterns = patterns(
     '',
     # cache page with 5s
     url(r'^products/(?P<product_slug>[0-9A-Za-z._%+-]+)/$',
-        cache_page(5)(views.product_page), name='product_page'),
+        views.product_page, name='product_page'),
     url(r'^products/',
         cache_page(5)(views.product_list), name='product_list'),
     url(r'^like/(?P<product_slug>[0-9A-Za-z._%+-]+)/$',

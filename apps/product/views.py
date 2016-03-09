@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 
+from django.core.cache import cache
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
@@ -39,7 +40,12 @@ def product_page(request, product_slug):
     '''
     Personal page for product.
     '''
-    product = get_object_or_404(Product, slug=product_slug)
+    product = cache.get(product_slug)
+    if not product:
+        product = get_object_or_404(Product, slug=product_slug)
+        cache.set(product_slug, product, 10)
+
+
     comments = Comment.objects.filter(
         product=product, created_at__gt=last_day).order_by('-created_at')[:10]
     if request.method == 'POST':
@@ -76,7 +82,10 @@ def like(request, product_slug):
     stackoverflow.com/questions/14007453/my-own-like-button-django-ajax-how
     '''
     user = request.user
-    product = get_object_or_404(Product, slug=product_slug)
+    product = cache.get(product_slug)
+    if not product:
+        product = get_object_or_404(Product, slug=product_slug)
+
     if product.likes.filter(id=user.id).exists():
         # user has already liked this product
         # remove like/user
@@ -86,5 +95,6 @@ def like(request, product_slug):
         # add a new like for a product
         product.likes.add(user)
         messages.success(request, 'You liked this')
+    cache.delete(product_slug)
     return redirect(reverse('product_page',
                             kwargs={'product_slug': product.slug}))
