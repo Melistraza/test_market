@@ -16,6 +16,10 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('product_page', kwargs={'product_slug': self.slug})
 
+    @property
+    def likes_count(self):
+        return self.likes.count()
+
 
 class Comment(models.Model):
     product = models.ForeignKey(Product)

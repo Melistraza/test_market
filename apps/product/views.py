@@ -101,7 +101,7 @@ def like(request, product_slug):
 
     cache.delete(product_slug)
     if request.is_ajax():
-        ctx = {'likes_count': product.likes.count(), 'message': 'asdasdasdasd'}
+        ctx = {'likes_count': product.likes_count}
         return HttpResponse(json.dumps(ctx), content_type='application/json')
     else:
         messages.success(request, text)
