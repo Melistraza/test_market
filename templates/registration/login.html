@@ -4,13 +4,13 @@
 {% endblock %}
 {% block content %}
   {% if form.errors %}
-    <p class="error">Сожалеем, вы неправильно ввели логин или пароль</p>
+    <p class="error">We are sorry, you enter the wrong username or password</p>
   {% endif %}
   <form action='.' method='post'>{% csrf_token %}
   <table class="login_page">
   <tr>
     <td>
-    <label for="username">Логин:</label>
+    <label for="username">Login:</label>
     </td>
     <td>
     <input type="text" name="username" value="" id="username">
@@ -18,7 +18,7 @@
   </tr>
   <tr>
   	<td>
-    <label for="password">Пароль:</label>
+    <label for="password">Password:</label>
     </td>
     <td>
     <input type="password" name="password" value="" id="password">
