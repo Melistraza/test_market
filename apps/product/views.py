@@ -13,6 +13,7 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 
+
 from apps.product.models import Product, Comment
 from apps.product.forms import CommentsForm
 
@@ -100,6 +101,8 @@ def like(request, product_slug):
         text = 'You liked this'
 
     cache.delete(product_slug)
+    product.likes_count = product.likes.count()
+    product.save()
     if request.is_ajax():
         ctx = {'likes_count': product.likes_count}
         return HttpResponse(json.dumps(ctx), content_type='application/json')

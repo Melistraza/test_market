@@ -12,13 +12,10 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User)
+    likes_count = models.PositiveIntegerField(default=0)
 
     def get_absolute_url(self):
         return reverse('product_page', kwargs={'product_slug': self.slug})
-
-    @property
-    def likes_count(self):
-        return self.likes.count()
 
 
 class Comment(models.Model):
