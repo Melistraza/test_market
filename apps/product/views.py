@@ -1,5 +1,10 @@
 from datetime import datetime, timedelta
+try:
+    from django.utils import simplejson as json
+except ImportError:
+    import json
 
+from django.http import HttpResponse
 from django.core.cache import cache
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -10,6 +15,7 @@ from django.core.urlresolvers import reverse
 
 from apps.product.models import Product, Comment
 from apps.product.forms import CommentsForm
+
 last_day = datetime.now() - timedelta(days=1)
 
 
@@ -87,14 +93,18 @@ def like(request, product_slug):
         product = get_object_or_404(Product, slug=product_slug)
 
     if product.likes.filter(id=user.id).exists():
-        # user has already liked this product
-        # remove like/user
         product.likes.remove(user)
-        messages.success(request, 'You disliked this')
+        text = 'You disliked this'
     else:
-        # add a new like for a product
         product.likes.add(user)
-        messages.success(request, 'You liked this')
+        text = 'You liked this'
+
     cache.delete(product_slug)
+    if request.is_ajax():
+        ctx = {'likes_count': product.likes.count(), 'message': 'asdasdasdasd'}
+        return HttpResponse(json.dumps(ctx), content_type='application/json')
+    else:
+        messages.success(request, text)
+
     return redirect(reverse('product_page',
                             kwargs={'product_slug': product.slug}))

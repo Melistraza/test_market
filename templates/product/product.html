@@ -31,10 +31,11 @@
     <br>
 
     <!-- Like button -->
-    <a href="{% url 'like' product.slug %}" class="btn btn-info" role="button">
-        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Link Button
-    </a>
-    {{ product.likes.count }}
+    <button class="btn btn-info" type="button" id="like_button">
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+        Like <span id="like_counter">{{ product.likes.count }}</span>
+    </button>
+
 
     <!-- Comment list -->
     <br><br>
@@ -47,4 +48,18 @@
         </div>
         <hr>
     {% endfor %}
+<script type="text/javascript">
+    $('#like_button').click(function(){
+        $.ajax({
+               type: "get",
+               url: "{% url 'like' product.slug %}",
+               dataType: "json",
+               success: function(response) {
+                   $('#like_counter').text(response.likes_count);
+
+                }
+          });
+    });
+</script>
+
 {% endblock %}
