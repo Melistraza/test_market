@@ -95,12 +95,12 @@ def like(request, product_slug):
 
     if product.likes.filter(id=user.id).exists():
         product.likes.remove(user)
-        product.likes_count = product.likes_count - 1
+        product.likes_count -= 1
         product.save()
         text = 'You disliked this'
     else:
         product.likes.add(user)
-        product.likes_count = product.likes_count + 1
+        product.likes_count += 1
         product.save()
         text = 'You liked this'
     # I optimized count only when the product is liked
