@@ -95,14 +95,17 @@ def like(request, product_slug):
 
     if product.likes.filter(id=user.id).exists():
         product.likes.remove(user)
+        product.likes_count = product.likes_count - 1
+        product.save()
         text = 'You disliked this'
     else:
         product.likes.add(user)
+        product.likes_count = product.likes_count + 1
+        product.save()
         text = 'You liked this'
-
+    # I optimized count only when the product is liked
+    # the easiest option is to take away or add Like
     cache.delete(product_slug)
-    product.likes_count = product.likes.count()
-    product.save()
     if request.is_ajax():
         ctx = {'likes_count': product.likes_count}
         return HttpResponse(json.dumps(ctx), content_type='application/json')
