@@ -76,6 +76,7 @@ def product_page(request, product_slug):
                   {'product': product, 'form': form, 'comments': comments})
 
 
+from django.db.models import F
 @login_required
 def like(request, product_slug):
     '''
@@ -95,19 +96,25 @@ def like(request, product_slug):
 
     if product.likes.filter(id=user.id).exists():
         product.likes.remove(user)
-        product.likes_count -= 1
-        product.save()
+        updated_like = product.likes_count - 1
+        counter = F('likes_count') - 1
         text = 'You disliked this'
     else:
         product.likes.add(user)
-        product.likes_count += 1
-        product.save()
+        updated_like = product.likes_count + 1
+        counter = F('likes_count') + 1
         text = 'You liked this'
-    # I optimized count only when the product is liked
-    # the easiest option is to take away or add Like
+
+    Product.objects.filter(slug=product_slug).update(
+        likes_count=counter)
+    # i can't get data after F() so I decided to give approximate value
+    # to not make an additional request (updated_like)
+
+    # seems to me my version with the cache was easier
+    # to scale, modifications and test
     cache.delete(product_slug)
     if request.is_ajax():
-        ctx = {'likes_count': product.likes_count}
+        ctx = {'likes_count': updated_like}
         return HttpResponse(json.dumps(ctx), content_type='application/json')
     else:
         messages.success(request, text)
